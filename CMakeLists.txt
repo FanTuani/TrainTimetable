@@ -9,4 +9,5 @@ add_executable(TrainTimetable source/main.cpp
         header/invalid_input_exception.h
         header/time24.h
         header/timetable.h
-        source/time24.cpp)
+        source/time24.cpp
+        source/timetable.cpp)

@@ -7,10 +7,7 @@ void info();
 void process(const int &);
 
 int main() {
-    Time24 a = Time24(3, 50);
-    Time24 b = Time24(2, 30);
-    std::cout << (a - b).toString();
-    while (0) {
+    while (true) {
         info();
         int operation;
         std::cin >> operation;
