@@ -12,7 +12,11 @@ void Time24::setTimeByString(std::string &timeStr) {
     this->hour = h, this->minute = min;
 }
 
-Time24::Time24(std::string &timeStr) {
+Time24::Time24(const int h, const int min) {
+    this->hour = h, this->minute = min;
+}
+
+Time24::Time24(std::string timeStr) {
     try {
         setTimeByString(timeStr);
     } catch (const InvalidInputException &e) {
@@ -20,12 +24,12 @@ Time24::Time24(std::string &timeStr) {
     }
 }
 
-void Time24::setTime24(int &h, int &min) {
+void Time24::setTime24(const int h, const int min) {
     this->hour = h;
     this->minute = min;
 }
 
-void Time24::setTime24(std::string &timeStr) {
+void Time24::setTime24(std::string timeStr) {
     try {
         setTimeByString(timeStr);
     } catch (const InvalidInputException &e) {
@@ -42,3 +46,6 @@ std::string Time24::toString() const {
     return resultString;
 }
 
+Time24 Time24::operator-(const Time24 b) const {
+    return {this->hour - b.hour, this->minute - b.minute};
+}

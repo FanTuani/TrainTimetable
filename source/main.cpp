@@ -7,10 +7,9 @@ void info();
 void process(const int &);
 
 int main() {
-    std::string a;
-    std::cin >> a;
-    auto *tm = new Time24(a);
-    std::cout << tm->toString();
+    Time24 a = Time24(3, 50);
+    Time24 b = Time24(2, 30);
+    std::cout << (a - b).toString();
     while (0) {
         info();
         int operation;
