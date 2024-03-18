@@ -1,6 +1,6 @@
 #include <iostream>
 #include "invalid_input_exception.h"
-#include "time24.h"
+#include "process_operation.h"
 
 void info();
 
@@ -8,6 +8,7 @@ void process(const int &);
 
 int main() {
     while (true) {
+        system("cls");
         info();
         int operation;
         std::cin >> operation;
@@ -28,13 +29,14 @@ void info() {
 }
 
 void process(const int &operation) {
-    system("cls");
     switch (operation) {
         case 0:
             exit(0);
         case 1:
+            queryCurrentTimetables();
             break;
         case 2:
+            newTrainTimetable();
             break;
         default:
             throw InvalidInputException();

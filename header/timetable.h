@@ -5,7 +5,7 @@
 #include "time24.h"
 
 class Timetable {
-private:
+protected:
     Time24 departureTime;
     Time24 arrivalTime;
 public:
