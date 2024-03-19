@@ -14,4 +14,5 @@ add_executable(TrainTimetable source/main.cpp
         header/process_operation.h
         source/process_operation.cpp
         header/train.h
-        source/train.cpp)
+        source/train.cpp
+        header/station.h)

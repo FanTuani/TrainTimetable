@@ -6,10 +6,12 @@
 
 class Timetable {
 protected:
-    Time24 departureTime;
     Time24 arrivalTime;
+    Time24 departureTime;
 public:
-    Timetable(Time24 d, Time24 a) : departureTime(d), arrivalTime(a) {};
+    Timetable(Time24 &d, Time24 &a) : arrivalTime(a), departureTime(d) {};
+
+    Timetable(std::string &d, std::string &a) : arrivalTime(Time24(a)), departureTime(Time24(d)) {};
 
     void setTimetable(Time24 d, Time24 a);
 

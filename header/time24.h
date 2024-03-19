@@ -5,6 +5,7 @@
 
 class Time24 {
 private:
+    bool invalid = true;
     int hour{};
     int minute{};
 

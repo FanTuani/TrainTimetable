@@ -1,12 +1,14 @@
 #include <iostream>
 #include "invalid_input_exception.h"
 #include "process_operation.h"
+#include "train.h"
 
 void info();
 
 void process(const int &);
 
 int main() {
+    Train::loadTrains();
     while (true) {
         system("cls");
         info();
