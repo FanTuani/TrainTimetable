@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "process_operation.h"
 #include "train.h"
 
@@ -19,17 +20,25 @@ void queryCurrentTimetables() {
 }
 
 void newTrainTimetable() {
-//    system("cls");
-//    std::cout << "3 arguments required:\n";
-//    std::cout << "identifier[string], departure time[xx:xx], arrival time[xx:xx]\n";
-//    std::ofstream config("config.txt", std::ios::app);
-//
-//    if (config.is_open()) {
-//        std::string identifier, departureTime, arrivalTime;
-//        std::cin >> identifier >> departureTime >> arrivalTime;
-//        config << identifier << ' ' << departureTime << ' ' << arrivalTime << '\n';
-//        config.close();
-//    } else {
-//        std::cout << "FILE FAILED TO OPEN\n";
-//    }
+    system("cls");
+    std::ofstream config("config.txt", std::ios::app);
+    if (config.is_open()) {
+        std::cout << "2 arguments required:\n";
+        std::cout << "identifier[string], passed stations[int]\n";
+        std::string identifier;
+        int passedStations;
+        std::cin >> identifier >> passedStations;
+        config << identifier << ' ' << passedStations << '\n';
+        std::cout << "[name] [arrival time] [departure time]\n";
+        for (int i = 1; i <= passedStations; i++) {
+            std::cout << "station [" << i << "]: ";
+            std::string stationName, arrivalTime, departureTime;
+            std::cin >> stationName >> arrivalTime >> departureTime;
+            config << stationName << ' ' << arrivalTime << ' ' << departureTime << '\n';
+        }
+        config << '\n';
+        config.close();
+    } else {
+        std::cout << "FILE FAILED TO OPEN\n";
+    }
 }

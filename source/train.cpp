@@ -8,6 +8,7 @@ std::vector<Train> trains;
 void Train::loadTrains() {
     std::ifstream config("config.txt");
     if (config.is_open()) {
+        trains.clear();
         std::string trainIdentifier;
         int stationNum;
         while (config >> trainIdentifier >> stationNum) {

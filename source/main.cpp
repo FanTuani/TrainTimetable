@@ -39,6 +39,7 @@ void process(const int &operation) {
             break;
         case 2:
             newTrainTimetable();
+            Train::loadTrains();
             break;
         default:
             throw InvalidInputException();
