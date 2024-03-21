@@ -3,16 +3,14 @@ project(TrainTimetable)
 
 set(CMAKE_CXX_STANDARD 20)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/header)
+set(HEADER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/header)
+set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source)
 
-add_executable(TrainTimetable source/main.cpp
-        header/invalid_input_exception.h
-        header/time24.h
-        header/timetable.h
-        source/time24.cpp
-        source/timetable.cpp
-        header/process_operation.h
-        source/process_operation.cpp
-        header/train.h
-        source/train.cpp
-        header/station.h)
+include_directories(${HEADER_DIR})
+
+file(GLOB SOURCE_FILES ${SOURCE_DIR}/*.cpp)
+file(GLOB HEADER_FILES ${HEADER_DIR}/*.h)
+
+add_executable(TrainTimetable
+        ${SOURCE_FILES}
+        ${HEADER_FILES})
