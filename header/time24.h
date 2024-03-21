@@ -9,20 +9,22 @@ private:
     int hour{};
     int minute{};
 
-    void setTimeByString(std::string &);
+    void setTimeByString(const std::string &);
 
 public:
     Time24(int h, int min);
 
-    explicit Time24(std::string);
+    explicit Time24(const std::string&);
 
     void setTime24(int, int);
 
-    void setTime24(std::string);
+    void setTime24(const std::string&);
 
     [[nodiscard]] std::string toString() const;
 
-    Time24 operator-(Time24) const;
+    Time24 operator-(const Time24 &) const;
+
+    bool operator<(const Time24 &) const;
 };
 
 #endif //TRAINTIMETABLE_TIME24_H
